@@ -1,7 +1,4 @@
-#include <cstring>
-#include "gfsreader.h"
-#include <iomanip>
-#include <limits>
+
 
 namespace  GMapping { 
 
