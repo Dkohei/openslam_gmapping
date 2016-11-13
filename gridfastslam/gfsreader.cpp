@@ -1,30 +1,4 @@
 
-
-namespace  GMapping { 
-
-namespace GFSReader{
-
-Record::~Record(){}
-void Record::write(ostream& os){};
-
-void CommentRecord::read(istream& is){
-	char buf[MAX_LINE_LENGHT];
-	memset(buf,0, MAX_LINE_LENGHT*sizeof(char));
-	is.getline(buf, MAX_LINE_LENGHT);
-	text=string(buf);
-}
-
-void CommentRecord::write(ostream& os){
-	os << "#GFS_COMMENT: " << text << endl;
-}
-
-PoseRecord::PoseRecord(bool ideal){
-	truePos=ideal;
-}
-void PoseRecord::read(istream& is){
-	is >> pose.x >> pose.y >> pose.theta;
-	time = 0;
-	if (is)
 		is >> time;
 }
 void PoseRecord::write(ostream& os){
