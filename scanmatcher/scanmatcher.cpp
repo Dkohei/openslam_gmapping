@@ -1,33 +1,5 @@
 #include <cstring>
-#include <limits>
-#include <list>
-#include <iostream>
-
-#include <gmapping/scanmatcher/scanmatcher.h>
-#include "gridlinetraversal.h"
-//#define GENERATE_MAPS
-
-namespace GMapping {
-
-using namespace std;
-
-const double ScanMatcher::nullLikelihood=-.5;
-
-ScanMatcher::ScanMatcher(): m_laserPose(0,0,0){
-	//m_laserAngles=0;
-	m_laserBeams=0;
-	m_optRecursiveIterations=3;
-	m_activeAreaComputed=false;
-
-	// This  are the dafault settings for a grid map of 5 cm
-	m_llsamplerange=0.01;
-	m_llsamplestep=0.01;
-	m_lasamplerange=0.005;
-	m_lasamplestep=0.005;
-	m_enlargeStep=10.;
-	m_fullnessThreshold=0.1;
-	m_angularOdometryReliability=0.;
-	m_linearOdometryReliability=0.;
+#in
 	m_freeCellRatio=sqrt(2.);
 	m_initialBeamsSkip=0;
 	
