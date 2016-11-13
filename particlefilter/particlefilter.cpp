@@ -1,39 +1,6 @@
 std::vector<unsigned int> sistematicResampler<State,Numeric>::resample(const vector<Particle>& particles) const{
 	Numeric cweight=0;
 
-	//compute the cumulative weights
-	unsigned int n=0;
-	for (vector<Particle>::const_iterator it=particles.begin(); it!=particles.end(); ++it){
-		cweight+=it->weight;
-		n++;
-	}
-
-	//compute the interval
-	Numeric interval=cweight/n;
-
-	//compute the initial target weight
-	Numeric target=
-	//compute the resampled indexes
-
-	cweight=0;
-	std::vector<int> indexes(n);
-	n=0;
-	unsigned int i=0;
-	for (vector<Particle>::const_iterator it=particles.begin(); it!=particles.end(); ++it, ++i){
-		cweight+=it->weight;
-		while(cweight>target){
-			indexes[n++]=i;
-			target+=interval;
-		}
-	}
-	return indexes;
-	}
-
-template <class Numeric>
-std::vector<unsigned int> indexResampler<Numeric>::resample(const vector<Numeric> >& weights) const{
-	Numeric cweight=0;
-
-	//compute the cumulative weights
 	unsigned int n=0;
 	for (vector<Numeric>::const_iterator it=weights.begin(); it!=weights.end(); ++it){
 		cweight+=*it;
